@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hoja_de_ruta,access.hoja.de.ruta,model_hoja_de_ruta,base.group_user,1,1,1,1
+access_hoja_de_ruta_stage,access.hoja.de.ruta.stage,model_hoja_de_ruta_stage,base.group_user,1,1,1,1
+access_hr_employee_line,access.hr.employee.line,model_hr_employee_line,base.group_user,1,1,1,1

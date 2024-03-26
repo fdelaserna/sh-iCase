@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hoja_de_ruta_stage_tree" model="ir.ui.view">
+        <field name="name">hoja.de.ruta.stage.tree</field>
+        <field name="model">hoja.de.ruta.stage</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record id="hoja_de_ruta_stage_action" model="ir.actions.act_window">
+        <field name="name">Hoja De Ruta Stage</field>
+        <field name="res_model">hoja.de.ruta.stage</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            No record is found!
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_custom_settings" name="Configuración personalizada" parent="stock.menu_stock_config_settings" groups="stock.group_stock_manager" sequence="99"/>
+    <menuitem id="menu_hoja_de_ruta_stage" action="hoja_de_ruta_stage_action" parent="menu_custom_settings" sequence="100"/>
+</odoo>

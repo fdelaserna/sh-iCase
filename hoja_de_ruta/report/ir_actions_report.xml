@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_hoja_de_ruta" model="ir.actions.report">
+        <field name="name">Hoja De Ruta</field>
+        <field name="model">hoja.de.ruta</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hoja_de_ruta.report_hoja_de_ruta</field>
+        <field name="report_file">hoja_de_ruta.report_hoja_de_ruta</field>
+        <field name="print_report_name">'Hoja De Ruta - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="model_hoja_de_ruta"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="action_report_delivery_token" model="ir.actions.report">
+        <field name="name">Etiqueta de Envío por Remito</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hoja_de_ruta.report_delivery_token</field>
+        <field name="report_file">hoja_de_ruta.report_delivery_token</field>
+        <field name="print_report_name">'Etiqueta de Envío - %s - %s' % (object.partner_id.name, object.name)</field>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="hoja_de_ruta.paperformat_shipping_label"/>
+    </record>
+</odoo>

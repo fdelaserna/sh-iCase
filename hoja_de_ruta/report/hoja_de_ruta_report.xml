@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_hoja_de_ruta">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <hr width="100%"
+                        style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;"/>
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h2 style="text-align: center;">Hoja De Ruta</h2>
+                        <br/>
+                        <h1>
+                            <span t-field="o.name"/>
+                        </h1>
+                        <hr width="100%"
+                            style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;"/>
+                        <div class="row">
+                            <div class="col-3">
+                                <h6>
+                                    <b>Fecha de Reparto:</b>
+                                </h6>
+                                <span t-field="o.delivery_date"/>
+                            </div>
+                            <div class="col-3">
+                                <h6>
+                                    <b>Flete:</b>
+                                </h6>
+                                <span t-field="o.partner_id"/>
+                            </div>
+                            <div class="col-3">
+                                <h6>
+                                    <b>Patente:</b>
+                                </h6>
+                                <span t-field="o.patent"/>
+                            </div>
+                            <div class="col-3">
+                                <h6>
+                                    <b>Prioridad:</b>
+                                </h6>
+                                <span t-field="o.priority"/>
+                            </div>
+                        </div>
+                        <table class="table mt-5">
+                            <thead>
+                                <tr>
+                                    <th class="text-center"><span>Remito</span></th>
+                                    <th class="text-center"><span>Sucursal/Cliente</span></th>
+                                    <th class="text-center"><span>Dirección de contacto Completa</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.delivery_note" t-as="delivery">
+                                    <tr class="text-center">
+                                        <td><span t-field="delivery.name"/></td>
+                                        <td><span t-field="delivery.partner_id.name"/></td>
+                                        <td><span t-field="delivery.partner_id.contact_address_complete"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <div class="mt-2">
+                            <span>Adicional: </span>
+                            <t t-out="o.additional"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

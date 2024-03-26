@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="delivery_note" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[hasclass('page')]" position="after">
+            <div style="padding-top:100px;"><span>Note:- <span t-out="o.note">No notes added</span></span></div>
+        </xpath>
+    </template>
+</odoo>

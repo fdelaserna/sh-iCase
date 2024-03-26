@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hr_employee_form" model="ir.ui.view">
+        <field name="name">hr.employee.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_ids']" position="after">
+                <group>
+                    <field name="estado"/>
+                    <field name="tipo"/>
+                    <field name="documento"/>
+                    <field name="legajo"/>
+                </group>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="inside">
+                <group>
+                    <field name="cuil"/>
+                    <field name="jornada"/>
+                    <field name="registro_afip"/>
+                </group>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Actividad">
+                    <group>
+                        <group>
+                            <field name="fecha_de_baja"/>
+                            <field name="fecha_de_ingreso"/>
+                        </group>
+                        <group>
+                            <field name="historia">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="fecha_de_baja"/>
+                                    <field name="fecha_de_ingreso"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="helpdesk_ticket_form" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.form</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email_cc']" position="after">
+                <field name="box"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="box"/>
+                <field name="patente"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

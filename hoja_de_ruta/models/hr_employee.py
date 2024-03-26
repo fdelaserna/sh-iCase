@@ -5,22 +5,22 @@ class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
     estado = fields.Selection(selection=[('Efectivo', 'Efectivo'),
-                                         ('Baja', 'Baja')], string='Estado',)
-    tipo = fields.Many2one('l10n_latam.identification.type', string='Tipo',
+                                         ('Baja', 'Baja')], string='Estado1',)
+    tipo = fields.Many2one('l10n_latam.identification.type', string='Tipo1',
                            related='work_contact_id.l10n_latam_identification_type_id')
-    documento = fields.Char(string='Documento', related='work_contact_id.vat')
-    legajo = fields.Integer(string='Legajo')
-    cuil = fields.Char(string='CUIL')
+    documento = fields.Char(string='Documento1', related='work_contact_id.vat')
+    legajo = fields.Integer(string='Legajo1')
+    cuil = fields.Char(string='CUIL1')
     jornada = fields.Selection(selection=[('Completa', 'Completa'),
-                                          ('Media', 'Media')], string='Jornada')
+                                          ('Media', 'Media')], string='Jornada1')
     registro_afip = fields.Selection(
         selection=[('Ventas A', 'Ventas A'), ('Ventas B', 'Ventas B'),
                    ('Admin A', 'Admin A'), ('Maestranza A', 'Maestranza A'),
-                   ('FC', 'FC')], string='Registro AFIP')
-    fecha_de_baja = fields.Date(string='Fecha De Baja')
-    fecha_de_ingreso = fields.Date(string='Fecha De Ingreso')
+                   ('FC', 'FC')], string='Registro AFIP1')
+    fecha_de_baja = fields.Date(string='Fecha De Baja1')
+    fecha_de_ingreso = fields.Date(string='Fecha De Ingreso1')
     historia = fields.One2many('hr.employee.line', 'employee_id',
-                               string='Historia')
+                               string='Historial1')
 
 
 class HrEmployeeLine(models.Model):

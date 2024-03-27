@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <!--  button popup template  -->
+    <t t-name="MultiCurrencyPopup" owl="1">
+        <div class="popup custom_popup multi-currency-popup" style="max-width: fit-content;">
+        <!-- Modal Header -->
+            <div class="modal-header justify-content-center">
+                <h2 class="modal-title">
+                    <t t-out="props.title"/>
+                    <div><t t-out="props.due_amount"/></div>
+                </h2>
+            </div>
+            <!-- Modal Body -->
+            <div class="custom-form-view" style="padding: 10px">
+                <form>
+                    <table class="table table-bordered mt32">
+                        <thead>
+                            <tr>
+                                <th class="text-center"><span>Select Currency</span></th>
+                                <th class="text-center"><span>Exchange Rate</span></th>
+                                <th class="text-center"><span>Customer Currency</span></th>
+                                <th class="text-center"><span>Custom Amount</span></th>
+                                <th class="text-center"><span>Balance Customer Currency</span></th>
+                                <th class="text-center"><span>Balance Company Currency</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="toggle-row">
+                                <td class="multi-currency">
+                                    <select t-model="this.state.onchange_amount">
+                                        <option>Select an option</option>
+                                        <t t-foreach="props.currency" t-as="currency" t-key="currency.id">
+                                            <t t-log="'t-key'"/>
+                                            <t t-log="currency"/>
+                                            <option t-att-value="currency.currency[1]" t-on-change="test">
+                                                <span t-out="currency.currency[1]"/>
+                                                <span class="d-none" t-out="currency.currency[0]" id="currencyOption"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </td>
+                                <td>
+                                    <t t-out="this.state.rate"/>
+                                </td>
+                                <td>
+                                    <t t-out="this.state.customer_currency"/>
+                                </td>
+                                <td class="multi-currency">
+                                    <input type="number"  t-model="state.onchange_amount"/>
+                                </td>
+                                <td class="multi-currency">
+                                    <span t-out="this.state.balance"/>
+                                </td>
+                                <td class="multi-currency">
+                                    <span t-out="this.state.company_balance"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="footer footer-flex modal-footer justify-content-end">
+                <div class="button cancel btn btn-lg btn-primary"
+                     t-on-click="cancel">
+                    <t t-out="props.closePopup"/>
+                </div>
+                <div class="button confirm btn btn-lg btn-primary"
+                     t-on-click="() => this.done(state.onchange_amount)">
+                    <t t-out="props.confirmKey"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

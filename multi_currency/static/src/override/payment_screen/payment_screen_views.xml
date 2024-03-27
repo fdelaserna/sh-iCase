@@ -1,0 +1,30 @@
+<templates id="template" xml:space="preserve">
+	<!-- Template which overrides the PaymentScreenButtons -->
+	<t t-name="dls_hoja_de_ruta.PaymentScreenMethods"
+       t-inherit="point_of_sale.PaymentScreenMethods"
+       t-inherit-mode="extension">
+<!--		<xpath expr="//div[hasclass('paymentmethods')]" position="inside">-->
+<!--			<button class="button button-quote-payment btn btn-light py-3 text-start rounded-0 border-bottom" t-att-class="{ 'highlight text-bg-primary': currentOrder.enable_quote_payment }"-->
+<!--                t-on-click="toggleCreditPayment" style="padding-left: 18px;">-->
+<!--                <i class="fa fa-credit-card fa-2x"/><span style="padding-left: 12px;}">Credit Card Payment</span>-->
+<!--            </button>-->
+<!--        </xpath>-->
+    </t>
+<!--	<t t-name="credit_card.PaymentScreenValidate"-->
+<!--           t-inherit="point_of_sale.PaymentScreenValidate"-->
+<!--           t-inherit-mode="extension">-->
+<!--		<xpath expr="//div[hasclass('validation')]" position="replace">-->
+<!--			&lt;!&ndash; Validate button with updated conditions and styling &ndash;&gt;-->
+<!--			<div class="button next validation btn btn-primary btn-lg py-5 rounded-0 d-flex flex-column align-items-center justify-content-center fw-bolder"-->
+<!--                      t-attf-class="{{currentOrder.is_paid() and currentOrder._isValidEmptyOrder() or currentOrder.is_partial_paid()? 'highlight' : 'disabled'}}"-->
+<!--                      t-on-click="() => this.validateOrder()">-->
+<!--				<div class="pay-circle d-flex align-items-center justify-content-center mb-2">-->
+<!--					<i class="oi oi-chevron-right" role="img" aria-label="Pay"-->
+<!--                           title="Pay"/>-->
+<!--				</div>-->
+<!--				<span class="next_text">Validate</span>-->
+<!--			</div>-->
+<!--		</xpath>-->
+<!--	</t>-->
+
+</templates>

@@ -133,8 +133,7 @@
                            t-value="o.backorder_ids.filtered(lambda x: x.state not in ('done', 'cancel'))"/>
                         <t t-if="o.backorder_ids and backorders">
                             <p class="mt-5">
-                                <span>Remaining quantities not yet delivered:
-                                </span>
+                                <span>Remaining quantities not yet delivered:</span>
                             </p>
                             <table class="table table-sm"
                                    name="stock_backorder_table"

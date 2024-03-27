@@ -24,8 +24,8 @@
                 <page string="Actividad">
                     <group>
                         <group>
-                            <field name="fecha_de_baja"/>
                             <field name="fecha_de_ingreso"/>
+                            <field name="fecha_de_baja"/>
                         </group>
                         <group>
                             <field name="historia">

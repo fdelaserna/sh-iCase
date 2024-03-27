@@ -7,7 +7,7 @@ class HojaDeRuta(models.Model):
     _description = 'Hoja De Ruta'
     _track_duration_field = 'stage_id'
 
-    check = fields.Boolean(string='Active')
+    check = fields.Boolean(string='Active1')
     color = fields.Integer(string='Color')
     name = fields.Char(string='Description', required=True)
     additional = fields.Html(string='Adicionales')

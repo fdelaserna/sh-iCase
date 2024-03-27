@@ -45,7 +45,7 @@ class HrPartner(models.Model):
 class HelpDeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
-    box = fields.Char(string='Box', related='customer_id.box')
+    box = fields.Char(string='Box')
 
 
 class ResUsers(models.Model):
